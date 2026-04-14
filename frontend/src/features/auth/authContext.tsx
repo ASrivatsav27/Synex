@@ -21,7 +21,6 @@ type AuthProviderProps = {
     children: ReactNode
 }
 
-
 export function AuthProvider({children}:AuthProviderProps) {
     const [user, setUser] = useState<User | null>(null)
     const [loading, setLoading] = useState(false);
@@ -67,11 +66,10 @@ export function AuthProvider({children}:AuthProviderProps) {
     
 
 
-    return (<AuthContext.Provider
+return (<AuthContext.Provider
         value={{
           user,loading,handleRegister,handleLogin,handleLogout
-      }}
-    >
+      }}>
           {children}
         
       </AuthContext.Provider>)

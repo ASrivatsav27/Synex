@@ -1,10 +1,13 @@
 
 import AppRoutes from "./AppRoutes";
 import { AuthProvider } from "./features/auth/authContext";
+import { RoomProvider } from "./features/rooms/RoomContext";
 const App = () => {
   return (
       <AuthProvider>
-     <AppRoutes />
+      <RoomProvider>
+        <AppRoutes />
+      </RoomProvider>
    </AuthProvider>
   )
 };

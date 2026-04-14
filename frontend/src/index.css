@@ -51,10 +51,7 @@ body {
 }
 
 .diagnostic-blur {
-	position: absolute;
-	border-radius: 999px;
-	background-color: rgba(128, 138, 150, 0.12);
-	filter: blur(26px);
+	display: none;
 }
 
 .hero-stagger .hero-step {

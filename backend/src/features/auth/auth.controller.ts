@@ -33,7 +33,8 @@ export async function registerController(req:Request,res:Response) {
 
     type JwtPayload = {
         userId: string,
-        email: string
+        email: string,
+        username: string
     }
    
     const secret = process.env.JWT_SECRET
@@ -41,7 +42,8 @@ export async function registerController(req:Request,res:Response) {
  
     const token = jwt.sign({
         userId: user._id.toString(),
-        email: user.email
+        email: user.email,
+        username: user.username
     } as JwtPayload, secret, { expiresIn: "3d"} )
     
     res.cookie("jwt_token",token)
@@ -83,6 +85,7 @@ export async function loginController(req:Request,res:Response) {
     type JwtPayload = {
         userId: string
         email: string
+        username: string
     }
     
     const secret = process.env.JWT_SECRET
@@ -90,7 +93,8 @@ export async function loginController(req:Request,res:Response) {
     
     const token = jwt.sign({
         userId: user._id.toString(),
-        email: user.email
+        email: user.email,
+        username: user.username
     }as JwtPayload,secret,{expiresIn:'3d'})
     
     res.cookie("jwt_token", token)

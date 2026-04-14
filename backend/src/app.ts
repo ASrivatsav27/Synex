@@ -12,5 +12,9 @@ app.use(cors({
 import authRouter from "./features/auth/auth.routes.js"
 app.use("/auth",authRouter)
 
+import roomRouter from "./features/rooms/room.routes.js"
+app.use("/rooms",roomRouter)
+
+
 
 export default app
