@@ -1,6 +1,6 @@
 import { createContext, type ReactNode,useState } from "react";
-import type { RoomResponse} from "./types/room.types";
-import { createRoom } from "./services/room.api";
+import type { RoomResponse} from "../types/room.types";
+import { createRoom } from "../services/room.api";
 
 
 type RoomContextType = {

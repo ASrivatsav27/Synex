@@ -1,12 +1,15 @@
 
 import AppRoutes from "./AppRoutes";
 import { AuthProvider } from "./features/auth/authContext";
-import { RoomProvider } from "./features/rooms/RoomContext";
+import { RoomProvider } from "./features/rooms/providers/RoomContext";
+import { PeerProvider } from "./features/rooms/providers/PeerContext";
 const App = () => {
   return (
       <AuthProvider>
       <RoomProvider>
-        <AppRoutes />
+        <PeerProvider>
+          <AppRoutes />
+        </PeerProvider>
       </RoomProvider>
    </AuthProvider>
   )
